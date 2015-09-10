@@ -1,0 +1,45 @@
+
+	
+	.madContent {width:930px;height:auto;margin:0 auto;text-align: center;}
+		.madBox{width:100%;margin-top:50px;}/*这边阴影问题是因为使用了外阴影 然后box的包裹div madContent的高度又是和该div是一样的 所以高度限制了之后阴影就无法显示*/
+			.madVideo{width:auto;height:355px;display: inline-block;font-size: 14px;box-shadow: 0 0 5px #000;position:relative;}
+				.madVideo img{height:100%;}
+				.madMask{
+					width:630px;
+					height:355px;
+					/* background: url(../images/mad/video_mask.png); */
+					position: absolute;
+					opacity:0;
+					cursor: pointer;
+				}
+
+			.madReason{
+				display: inline-block;
+				font-size: 14px;text-align: left;
+				width:300px;
+				background:#F2F2F2;
+				position:relative;
+				margin-left: -6px;
+  				height: 355px;
+			}
+
+			.madReason ul{position:absolute; bottom:0;background:#F2F2F2;box-shadow: 0 0 5px #000;}
+			.madReason h3{
+				width:50%;background:#D6A703;
+				font-size: 18px;height:30px;
+				line-height: 30px;text-indent: 0.5em;
+				font-weight: bold;
+			}
+			.madReason p{height:30px;word-wrap: break-word;word-break:break-all;padding:10px 0 0 10px;}
+			.madReason .ps{height:105px;}
+
+.madVideoMask {
+	width:850px;
+	height:480px;
+	position: fixed;
+	top:0;right:0;
+	display: none;
+}
+	.madVideoMaskClose {}
+	.madVideoMaskClose a{width:50px; height:50px;font-size:14px;line-height:50px;color:#FFF;position:absolute;right: -60px;background: red;text-align: center;}/*使用 absolute属性的时候 在JS里面控制left right 效果不流畅 会延迟*/
+.dialog{width:100%;height:100%;background:#000;opacity: 0.5;position:fixed;top: 0;display: none;}

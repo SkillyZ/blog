@@ -1,0 +1,60 @@
+[ 2015-08-13T15:54:49+08:00 ] 127.0.0.1 /randomArticle
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `wl_article` [ RunTime:0.003000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wl_article` LIMIT 1   [ RunTime:0.001001s ]
+SQL: select a.id, a.title, a.create_date, b.name as catename, c.nickname, d.tag_name
+from wl_article a
+left join wl_cate b on a.cid = b.id
+left join wl_user c on a.user_id = c.id
+left join wl_article_tag d on a.id = d.article_id 
+limit 14 , 5 [ RunTime:0.000000s ]
+
+[ 2015-08-13T16:32:34+08:00 ] 127.0.0.1 /randomArticle
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `wl_article` [ RunTime:0.003000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wl_article` LIMIT 1   [ RunTime:0.000000s ]
+SQL: select a.id, a.title, a.create_date, b.name as catename, c.nickname, d.tag_name
+from wl_article a
+left join wl_cate b on a.cid = b.id
+left join wl_user c on a.user_id = c.id
+left join wl_article_tag d on a.id = d.article_id 
+limit 1 , 5 [ RunTime:0.001000s ]
+
+[ 2015-08-13T16:36:43+08:00 ] 127.0.0.1 /randomArticle
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `wl_article` [ RunTime:0.003000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wl_article` LIMIT 1   [ RunTime:0.000000s ]
+SQL: select a.id, a.title, a.create_date, b.name as catename, c.nickname, d.tag_name
+from wl_article a
+left join wl_cate b on a.cid = b.id
+left join wl_user c on a.user_id = c.id
+left join wl_article_tag d on a.id = d.article_id 
+limit 10 , 5 [ RunTime:0.000000s ]
+
+[ 2015-08-13T16:36:51+08:00 ] 127.0.0.1 /randomArticle
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `wl_article` [ RunTime:0.003000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead E:\huasuhui\GRProject\blog\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wl_article` LIMIT 1   [ RunTime:0.000000s ]
+SQL: select a.id, a.title, a.create_date, b.name as catename, c.nickname, d.tag_name
+from wl_article a
+left join wl_cate b on a.cid = b.id
+left join wl_user c on a.user_id = c.id
+left join wl_article_tag d on a.id = d.article_id 
+limit 9 , 5 [ RunTime:0.000000s ]
+

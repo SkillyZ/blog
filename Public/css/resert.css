@@ -1,0 +1,54 @@
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, th, td, embed, object {
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: '微软雅黑','Hiragino Sans GB';
+    font-size: 14px;  
+    -webkit-text-size-adjust:none;  
+}
+ul,li{list-style-type:none;}
+a{text-decoration:none;}
+
+
+address, caption, cite, code, dfn, em,
+h1, h2, h3, h4, h5, h6, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 设置图片视频等自适应调整 */
+img {
+max-width: 100%;
+height: auto;
+width: auto\9; /* ie8 */
+}
+
+address, caption, cite, code, dfn, em,
+h1, h2, h3, h4, h5, h6, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+input, textarea, select{
+	outline: none;
+	border:0;
+    font-family: '微软雅黑','Hiragino Sans GB';
+    resize: none;
+}
+/** 为了更好的显示效果，我们往往还要格式化一些CSS属性的初始值：***/
+/* 禁用iPhone中Safari的字号自动调整 
+html {
+-webkit-text-size-adjust: none;
+}
+/* 设置HTML5元素为块 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+
+.video embed, .video object, .video iframe {
+width: 100%;
+height: auto;
+}
+*/

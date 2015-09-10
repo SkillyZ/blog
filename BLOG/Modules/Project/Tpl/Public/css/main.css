@@ -1,0 +1,22 @@
+.wrap{width:auto; height:auto; position:relative;}
+	.topBar{
+		width:100%; height:45px; 
+		line-height:45px; 
+		background:#52b8cb;/* #00B4CC */
+	}
+	.topBar .topBar_content{width:400px; margin:0 auto;text-align: center;position: relative; }
+
+	.topBar .topBar_content a{
+		display:inline-block;color:#FFF;
+		text-shadow:0 0 2px #000000;
+		padding:0 15px;
+		font-weight: 600;
+		-webkit-transition: 5s ease;
+	    -moz-transition: 5s ease;
+	    -o-transition: 5s ease;
+	    -ms-transition: 5s ease;
+		transition:.5s all;}
+
+	.topBar .topBar_content ul{position: relative; left: 50%; float: left;}
+	.topBar .topBar_content li{position: relative; right:50%;float:right;font-size: 14px;}
+	.topBar .topBar_content .current{background: #5a5757;}

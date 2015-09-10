@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ctmon</title>
+<link href="__PUBLICC__/css/resert.css" rel="stylesheet" />
+<style type="text/css">
+.wrap{width:100%; height:auto; }
+	
+	.bar{width:45px;position:fixed;right: 0; top:20%;z-index: 2;}
+		.bar ul{text-align: center;}
+		.bar li {width:45px;height:45px;line-height:45px;background: #1F2227;font-size:14px; color:#FFF;margin:3px 0;cursor: pointer;position: relative;}
+		#bar-top{background: #FFF;opacity: 0.9;color: #000;font-weight: bold;}
+		.bar-block-message{width:117px;height:117px;background:url(__PUBLIC__/images/web/ctmon/my.png) no-repeat;position:relative; right:120px;bottom:117px;display:none;}
+
+		.top{width:100%; height:60px;background:#1f2228;position:fixed;overflow: hidden;z-index: 2;opacity: 0.9;}/**/
+		.top-left{width:300px;height:100%;position:absolute;left:5%;color:#FFF;}
+			.top-left a{display:inline-block;width:auto;height:100%;padding:10px 0 0 0;vertical-align: middle;}/*因为设置了a*/
+			.top-left img{}
+        	.top-left-div{font-size: 14px;margin-left: 10px;display: inline-block;}
+        .top-right{height:60px;width:auto;position:absolute; right:5%;}
+        	.top-right-link{height:60px;width:60px;float: right;}
+	        .top-right-link a{height:60px;width:60px;background: url(__PUBLIC__/images/web/ctmon/top_right.png) no-repeat center #E60013;display: inline-block;}
+	        
+	        .top-right-content {width:100px;line-height:60px;font-size: 14px;color: #FFF;font-weight: bold;text-align: center;background:#101114;
+	        	margin-right:60px;}
+	        
+	        .top-right-menu{font-size: 14px;width:0;position:absolute;top :0;right:60px;background:#101114;text-align: center;display:none;}
+	        .top-right-menu li{height:60px;width:60px;line-height:60px;float:left;}
+	        .top-right-menu a{color: #FFF;}
+			.top-right-menu-current{background:#E60013;}
+
+	.banner{width:100%; height:760px; background: #F2F2F2;position:relative;overflow: hidden;}
+		.banner-bg{width:100%;height:100%;position: absolute;}
+		/*这里使用绝对是因为绝对定位之后的元素脱离了文档流 就能让下面的元素显示出来。。。?*/
+			.banner-bg1{width:100%;height:100%;background: url(__PUBLIC__/images/web/ctmon/bg_anime_1.jpg) no-repeat center; opacity: 0;z-index: 0;position: absolute;
+				moz-background-size:cover;
+				-webkit-background-size:cover;
+				-o-background-size:cover;
+				background-size:cover;}
+			.banner-bg2{width:100%;height:100%;background: url(__PUBLIC__/images/web/ctmon/bg_anime_2.jpg) no-repeat center; opacity: 0;z-index: 0;position: absolute; -moz-background-size:cover;
+				-webkit-background-size:cover;
+				-o-background-size:cover;
+				background-size:cover;}
+			.banner-bg3{width:100%;height:100%;background: url(__PUBLIC__/images/web/ctmon/bg_anime_3.jpg) no-repeat center; opacity : 0;z-index: 0;position:absolute;
+				moz-background-size:cover;
+				-webkit-background-size:cover;
+				-o-background-size:cover;
+				background-size:cover;}
+
+			.banner-scatter1{width:244px;height:302px;background:url(__PUBLIC__/images/web/ctmon/dog.png) no-repeat;position: absolute; bottom:0;margin-left:-120px;}
+
+			.banner-scatter2{width:244px;height:302px;background:url(__PUBLIC__/images/web/ctmon/dog.png) no-repeat;position: absolute;margin-left:-120px;left: 50%;bottom: 700px;
+				-ms-transform:rotate(180deg); /* IE 9 */
+    			-moz-transform:rotate(180deg); /* Firefox */
+    			-webkit-transform:rotate(180deg); /* Safari and Chrome */
+    			-o-transform:rotate(180deg); /* Opera */
+				}
+			
+			.banner-scatter3{width:244px;height:302px;background:url(__PUBLIC__/images/web/ctmon/dog.png) no-repeat;position: absolute; bottom:-302px;margin-left:-120px;left: 50%;}
+
+		.banner-scatter-current{}
+		.banner-bg-current{}
+
+		.banner-bar{width:200px;,height:auto;position:relative;top: 100%;font-size: 14px;text-align: center;margin:0 auto;z-index: 2;}
+		.banner-bar li{display:inline-block;width:30px;height: 40px;background: #1F2227;margin: 0 5px;position:relative; bottom: 20px;}
+
+	.main-a{width:100%;height:620px;}
+		.main-a .main{width:1000px;height:100%;margin:0 auto;text-align: center;margin-top: 40px;}
+		.main-a-label h3{font-size: 28px;font-weight:bold;}
+		.main-a-label p{font-size: 13px;color:#8c8c8c;}
+		.main-a-imgs{margin:80px 0;}
+		.main-a .box{margin-left:110px;}
+		.main-a-box{display: inline-block;height:auto;}
+		.main-aa-imgs img{position:absolute;bottom:70px;left:35px;}
+		.main-aa-imgs{background: url(__PUBLIC__/images/web/ctmon/main_a-bg1.jpg) no-repeat;width:164px;height:188px;position: relative;cursor:pointer;}
+		.main-aa-imgs:hover{background: url(__PUBLIC__/images/web/ctmon/main_a-bg2.jpg)}
+		.main-aa-label {margin-top: 20px;}
+		.main-aa-label h3{font-size: 16px; font-weight: bold;}
+		.main-aa-label span{font-size: 12px; color:#8c8c8c;}
+
+	.main-b{width:100%;height:800px;background:#CA192B;}
+		.main-bb{height:auto;width:1000px;margin:0 auto;text-align: center;}
+			.main-bb-label{}
+			.main-bb-label h3{font-size: 16px; font-weight: bold;color:#FFF;}
+			.main-bb-label p{font-size: 12px; color:#ff4f38;}
+		
+		.main-bc{height:350px;width:1000px;margin:50px auto;}
+			.main-bc-img{width:238px;height:166px;background:url(__PUBLIC__/images/web/ctmon/main-bc-img.jpg);background-size:cover;float: left;margin: 16px 0 0 16px;position:relative;overflow: hidden;}
+				.main-bc-mask{position: absolute;bottom: -60px;width:100%;background:black;height:60px;opacity: 0.4;}
+				.main-bc-label{position: absolute;bottom: 0;width:100%;padding:10px;bottom: -60px;}
+				.main-bc-label h3{font-size: 16px;color:#FFF;}
+				.main-bc-label span{font-size: 12px;color:#4b4b4b;display:block;}
+
+		.main-bd{height:auto;width:1000px;text-align: center;font-size: 14px;margin:100px auto;font-weight: bold;}
+			.main-bd-img{background:url(__PUBLIC__/images/web/ctmon/main-bd-img.png) no-repeat;height:50px;width:50px;line-height: 50px;display: inline-block;color:black;}
+
+	.main-c{width:100%;height:400px;background: #FFAE00;}
+		.main-ca{width:1000px;text-align: center;padding-top: 50px;margin: 0 auto}
+		.main-ca-img{width:35px; height:35px; display: inline-block;vertical-align: middle;background: #1f2228;cursor: pointer;}
+		.main-ca-input{height:35px;width:400px;vertical-align: middle;margin-left: 10px;border:0;outline:none;color:#666666;}
+		.main-ca-textarea{height:70px;width:397px;vertical-align: middle;margin-left: 10px;border:0;outline:none;color:#666666;}
+		.main-ca li{margin-top: 10px;}
+		.main-cb{margin:0 auto;width:1000px;}
+		.main-cb-img {width:50px;height:50px;background:#FFF; margin:30px auto 0 auto;font-size: 12px;font-weight:bold;text-align: center;line-height: 50px;border-radius: 25px;display: block;}
+
+	.foot{width:100%;height:430px;background:#1F2228;}
+		.foot-a{width:1000px;margin:0 auto;text-align: center;padding-bottom: 30px;}
+		.foot-a-label{font-size: 12px;color: #393e48}
+		.foot-split{width:100%;height:1px;border-bottom: 1px dashed #393e48; }
+		.foot-b{width:1000px;margin:0 auto;font-size: 12px;margin-top: 30px;color:#FFF;}
+			.foot-b .foot-b-ul-li {float: left;margin-left: 100px}
+			.foot-b li p{margin-bottom: 10px}
+			.foot-b li a{line-height: 18px; color:#393e48;}
+</style>
+<script src="__PUBLICC__/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		topInit();
+		bannerInit();
+		barInit();
+		bannerShow();
+		//mainAaInit();
+		mainBcInit();
+		mainCaInit();
+		footInit();
+	});
+	function footInit(){
+		$('.foot-b-ul-li a').bind('mouseover', function(){
+
+			$(this).css('color', '#FFF');
+		})
+		$('.foot-b-ul-li a').bind('mouseout', function(){
+			$(this).css('color', '#393e48');
+		})
+	}
+
+	function mainCaInit(){
+		$('.main-ca li').bind('mouseover', function(){
+			$(this).children('.main-ca-img').css('background','#CA192B');
+		})
+		$('.main-ca li').bind('mouseout', function(){
+			$(this).children('.main-ca-img').css('background','#1f2228');
+		})
+
+		$('.main-ca li .main-ca-current').bind('focus', function(){
+			if($(this).val() == $(this).data('value')){
+				$(this).val("");
+			}
+		})
+		$('.main-ca li .main-ca-current').bind('blur', function(){
+			if($(this).val() == ""){
+				$(this).val($(this).data('value'));
+			}
+		})
+
+		$('.main-cb-img').bind('mouseover', function(){
+			$(this).css({
+				'color':'#FFF',
+				'background': '#CA192B'
+			})
+		})
+		$('.main-cb-img').bind('mouseout', function(){
+			$(this).css({
+				'color':'#000',
+				'background': '#FFF'
+			})
+		})
+	}
+
+	function mainBcInit(){
+		$('.main-bc-img').bind('mouseover', function(){
+
+			$(this).children('div').each(function(index,val){
+				$(this).stop(true);
+				$(this).animate({
+					'bottom': 0
+				},200)
+			})
+		})
+
+		$('.main-bc-img').bind('mouseout', function(){
+
+			$(this).children('div').each(function(index,val){
+				$(this).stop(true);
+				$(this).animate({
+					'bottom': -60
+				},200)
+			})
+		})
+		
+		$('.main-bd-img').bind('mouseover', function(){
+			$(this).css({
+				'background':'url(__PUBLIC__/images/web/ctmon/main-bd-img2.png)',
+				'color':'#FFF'
+			});
+		})
+
+		$('.main-bd-img').bind('mouseout', function(){
+			$(this).css({
+				'background':'url(__PUBLIC__/images/web/ctmon/main-bd-img.png)',
+				'color':'#000'
+			});
+			
+		})
+	}
+
+	function mainAaInit(){
+		$('.main-a .main-aa-imgs').bind('mouseover', function(){
+			console.log('11111');
+			$(this).css('background','url(__PUBLIC__/images/web/ctmon/main_a-bg2.jpg)');
+		})
+		$('.main-a .main-aa-imgs').bind('mouseover', function(){
+			console.log('22222');
+			$(this).css('background','url(__PUBLIC__/images/web/ctmon/main_a-bg1.jpg)');
+		})
+	}
+
+	function barInit(){
+		
+		$('.bar-top').bind('click',function(){
+			$('body,html').animate({scrollTop:0},400);
+		});
+
+		$('.bar li').bind('mouseover', function(){
+			if ($(this).hasClass('bar-solid')){
+
+				$(this).css({
+					'background': '#CA192B',
+				}).animate({
+					'width' : 100,
+					'right': 55
+				}, 200);
+
+			}else if($(this).hasClass('bar-block')){
+				$(this).css({
+					'background': '#CA192B',
+				})
+				$(this).children('.bar-block-message').css('display','block');
+			}
+		});
+
+		$('.bar li').bind('mouseout', function(){
+			if ($(this).hasClass('bar-solid')){
+
+				$(this).stop(true);
+
+				$(this).css({
+					'background': '#1F2227',
+				}).animate({
+					'width' : 45,
+					'right': 0
+				}, 200);
+
+			}else if($(this).hasClass('bar-block')){
+				$(this).css({
+					'background': '#1F2227',
+				});
+				$(this).children('.bar-block-message').css('display','none');
+			}
+		});
+	}
+
+	function bannerShow(){
+		var index = ($('.banner-bar li.banner-bg-current').index() +1)%3;
+		$('.banner-bar li').eq(index).click();
+	}
+
+	function bannerInit(){
+
+		var intervalId = setInterval('bannerShow()', 5000);
+
+		$('.banner-bar li').each(function(index, val){
+			var auto = $(this).bind('click',function(){
+				$(this).css({
+					'background':'#1F2227',
+					'bottom':20
+				});
+
+				$('.banner-bg').children('div').each(function(bIndex, bVal){
+					if(index == bIndex){
+						$(this).children('div').animate({
+						'left': $(this).children('div').data('left'),
+						'bottom': $(this).children('div').data('bottom')
+						},500)
+
+						$(this).css('z-index','1').animate({
+							'opacity' : 1
+						}, 500, function(){
+							
+							$(this).children('div').animate({
+								'left': $(this).children('div').data('newLeft'),
+								'bottom': $(this).children('div').data('newBottom')
+							},500)
+
+							$('.banner-bar li').eq(bIndex).css({
+								'background':'#CA192B'
+							}).animate({
+								'bottom':40
+							}, 200).addClass('banner-bg-current');
+
+						})
+					}else{
+				
+						$(this).animate({
+						'opacity' : 0,
+						'z-index' : 0
+						})
+						$(this).children('div').animate({
+							'left': $(this).children('div').data('left'),
+							'bottom': $(this).children('div').data('bottom')
+						},500)
+
+						$('.banner-bar li').eq(bIndex).css({
+							'background':'#1F2227'
+						}).animate({
+							'bottom':20
+						}, 200).removeClass('banner-bg-current');
+					}
+				})
+				
+			})
+			
+		})
+			/*if($(this).data('animate') == 'banner-bg0'){
+				$('.banner-scatter1').animate({
+					'left':'50%'
+				},500)
+
+			}else if($(this).data('animate') == 'banner-bg2'){
+				$('.banner-scatter2').animate({
+					'bottom':'60'
+				},500)
+			}else if($(this).data('animate') == 'banner-bg3'){
+				$('.banner-scatter3').animate({
+					'bottom':'0'
+				},500)
+			}*/
+
+
+		/*$('.banner-bar li').bind('mouseover', function(){
+			$(this).css({
+				'background':'#CA192B'
+			}).animate({
+				'bottom':40
+			}, 200);
+
+		});
+		$('.banner-bar li').bind('mouseout', function(){
+			$(this).stop(true);
+
+			$(this).css({
+				'background':'#1F2227'
+			}).animate({
+				'bottom':20
+			}, 200);
+		});*/
+	}
+
+	function topInit(){
+		$('.top-right-link a').bind('click', function(){
+			if($('.top-right-menu').width() == 0){
+				$('.top-right-menu').css('display','block').animate({
+					'width' : 300
+				}, 200);
+			}else{
+				$('.top-right-menu').animate({
+					'width' : 0
+				}, 200, function(){
+					$('.top-right-menu').css('display','none');
+				});
+			}
+		});
+
+		$('.top-right-menu li').bind('mouseover', function(){
+			$(this).addClass('top-right-menu-current');
+		});
+		$('.top-right-menu li').bind('mouseout', function(){
+			$('.top-right-menu li').removeClass('top-right-menu-current');
+		});
+	}
+/*setTimeout()方法是在等待指定时间后执行函数, 且只执行一次传入的句柄函数. setInterval()方法是每指定间隔时间后执行一次传入的句柄函数,循环执行直至关闭窗口或clearInterval().
+
+你可以使用 window.clearTimeout()来取消延迟操作.
+如果你希望你的代码被重复的调用 (比如每 N 毫秒一次),考虑使用window.setInterval().
+*/
+</script>
+
+</head>
+<body>
+<div class="wrap">
+	<!-侧边栏->
+	<div class="bar">
+		<ul>
+			<li class="bar-top" id="bar-top">Top</li>
+			<li class="bar-solid">Top2</li>
+			<li class="bar-block">Top3
+				<div class="bar-block-message">	
+				</div>
+			</li>
+			<li class="bar-solid">Top4</li>
+			<li class="bar-block">Top5
+				<div class="bar-block-message">
+						
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+
+	<!-顶部栏->
+	<div class="top">
+		<div class="top-left">
+			<a href="#">
+				<img src="__PUBLIC__/images/web/ctmon/blackShoot-40X40.png" />
+			</a>
+			<div class="top-left-div">天上蹲仿制翔太仿过的ctmon站</div>
+		</div>
+		<div class="top-right">
+			<div class="top-right-link">
+				<a href="#"></a>
+			</div>
+			<div class="top-right-content">
+				menu
+			</div>
+			<div class="top-right-menu">
+				<ul>
+					<li><a href="#">INDEX</a></li>
+					<li><a href="#">WEB</a></li>
+					<li><a href="#">CS</a></li>
+					<li><a href="#">MAD</a></li>
+					<li><a href="#">BLOG</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-首页->
+	<div class="banner">
+		<div class="banner-bg">
+			<div class="banner-bg1">
+				<div class="banner-scatter1" data-new-left="50%" data-new-bottom="0" data-left="0" date-bottom="0"></div>
+			</div>
+			<div class="banner-bg2">
+				<div class="banner-scatter2" data-new-left="50%" data-new-bottom="400" data-left="50%" data-bottom="700"></div>
+			</div>
+			<div class="banner-bg3">
+				<div class="banner-scatter3" data-new-left="50%" data-new-bottom="0" data-left="50%" data-bottom="-302"></div>
+			</div>
+		</div>
+
+		<ul class="banner-bar">
+			<li data-animate="banner-bg1"></li>
+			<li data-animate="banner-bg2"></li>
+			<li data-animate="banner-bg3"></li>
+		</ul>
+	</div>
+	
+	<!-首页下介绍->
+	<div class="main-a">
+		<div class="main">
+			<div class="main-a-img">
+				<img src="__PUBLIC__/images/web/ctmon/main_a-img.png"/>
+			</div>
+			<div class="main-a-label">
+				<h3>关于lenrinfvck</h3>
+				<p>吃翔经验超过十年！</p>
+				<p>我们了解各种吃翔的方式,让清理着感知吃翔的应用体验价值,而不仅仅是翔的功能</p>
+			</div>
+			<div class="main-a-imgs">
+				<div class="main-a-box">
+					<div class="main-aa-imgs">
+						<img src="__PUBLIC__/images/web/ctmon/dog90x80.png"/>
+					</div>
+					<div class="main-aa-label">
+						<h3>BOSS出现！</h3>
+						<span>boss掉落了极品装备!</span>
+					</div>
+				</div>
+				<div class="main-a-box box">
+					<div class="main-aa-imgs ">
+						<img src="__PUBLIC__/images/web/ctmon/dog90x80.png"/>
+					</div>
+					<div class="main-aa-label">
+						<h3>BOSS出现！</h3>
+						<span>boss掉落了极品装备!</span>
+					</div>
+				</div>
+				<div class="main-a-box box">
+					<div class="main-aa-imgs">
+						<img src="__PUBLIC__/images/web/ctmon/dog90x80.png"/>
+					</div>
+					<div class="main-aa-label">
+						<h3>BOSS出现！</h3>
+						<span>boss掉落了极品装备!</span>
+					</div>
+				</div>
+				<div class="main-a-box box">
+					<div class="main-aa-imgs">
+						<img src="__PUBLIC__/images/web/ctmon/dog90x80.png"/>
+					</div>
+					<div class="main-aa-label">
+						<h3>BOSS出现！</h3>
+						<span>boss掉落了极品装备!</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-图片形式介绍->
+	<div class="main-b">
+		<div class="main-bb">
+			<div class="main-bb-img">
+				<img src="__PUBLIC__/images/web/ctmon/main_a-img2.png"/>
+			</div>
+			<div class="main-bb-label">
+				<h3>翔哥展示</h3>
+				<p>吃翔经验超过十年！</p>
+				<p>我们了解各种吃翔的方式,让清理着感知吃翔的应用体验价值,而不仅仅是翔的功能</p>
+			</div>
+		</div>
+		<div class="main-bc">
+			<a class="main-bc-img" style="margin-left:0" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" style="margin-left:0" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+			<a class="main-bc-img" href="#">
+				<div class="main-bc-mask">
+					
+				</div>
+				<div class="main-bc-label">
+					<h3>BOSS</h3>
+					<span>BOSS掉落极品装备啦！</span>
+				</div>
+			</a>
+		</div>
+
+		<div class="main-bd">
+			<a class="main-bd-img" href="#">
+				<span>MORE</span>
+			</a>
+		</div>
+	</div>
+	
+	<!-提交留言->
+	<div class="main-c">
+		<div class="main-ca">
+			<ul>
+				<li>
+					<div class="main-ca-img"></div>
+					<input type="text" class="main-ca-input main-ca-current" value="尊称" data-value="尊称"/>
+				</li>
+				<li>
+					<div class="main-ca-img"></div>
+					<input type="text" class="main-ca-input main-ca-current" value="电话" data-value="电话"/>
+				</li>
+				<li>
+					<div class="main-ca-img"></div>
+					<input type="text" class="main-ca-input main-ca-current" value="邮箱" data-value="邮箱"/>
+				</li>
+				<li>
+					<div class="main-ca-img" style="height:70px;"></div>
+					<textarea type="text" class="main-ca-textarea main-ca-current"  data-value="您的要求">您的要求</textarea>
+				</li>
+			</ul>
+		</div>
+		<div class="main-cb">
+			<a class="main-cb-img" href="#">
+				SEND
+			</a>
+			
+		</div>
+	</div>
+	
+	<!-底部栏目->
+	<div class="foot">
+		<div class="foot-a">
+			<div class="foot-a-img">
+				<img src="__PUBLIC__/images/web/ctmon/main_a-img2.png"/>
+			</div>
+			<div class="foot-a-label">
+				<p>地址/Add: http://weibo.com/576771140</p>
+				<p>电话/Tel: 15558025017</p>
+				<p>邮箱/Mail: 1254109699@qq.com</p>
+			</div>
+		</div>
+		<div class="foot-split"></div>
+		<div class="foot-b">
+			<ul class="foot-b-ul">
+				<li class="foot-b-ul-li" style="margin-left:0;">
+					<ul>
+						<li><P>解决方案</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>服务专区</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>知识学院</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>案例展示</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>产品中心</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>创同盟</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+				<li class="foot-b-ul-li">
+					<ul>
+						<li><P>联系我们</P></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+						<li><a href="#">MAD</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

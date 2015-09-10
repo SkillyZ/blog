@@ -1,0 +1,80 @@
+
+<include file="Common:head"/>
+<style type="text/css">
+.am-btn{
+	outline: 0;
+	border: 0;
+	border-radius: 2px;
+}
+.am-btn-primary:hover{
+	color: #fff;
+	background-color: #0a6999;
+	border-color: #0a6999;
+}
+.am-input-edit{
+	height: 35px;
+	font-size: 16px;
+	padding-left: 10px;
+	width: 33%;
+	border: 1px solid #ccc;
+	-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.am-div-edit:first-child{
+	margin-top: 0;
+}
+.am-div-edit{
+	margin-top: 10px;
+}
+.am-div-edit-wrap{
+	width: 100%;
+	padding: 50px 50px;
+	text-align: left;
+}
+.am-text-edit{
+	width: 16%;
+	margin-right: 20px;
+	display: inline-block;
+	text-align: right;
+}
+.am-btn-primary{
+	margin-left: 16%;
+}
+</style>
+
+	<!--content-->
+	<div class="content-right ">
+		<div class="content-nav">
+			<div class="nav-word">
+				<strong>标签</strong>
+				/
+				<small>新增标签</small>
+			</div>
+			
+			<form action="__URL__/saveTag" method="POST">
+				<div class="am-div-edit-wrap">
+					<div class="am-div-edit am-form" >
+						<span class="am-text-edit">标签ID</span>
+						<input type="text" name="id" id="id" disabled="disabled" class="am-input-edit" value="T{$id}">
+					</div>
+					
+					<div class="am-div-edit">
+						<span class="am-text-edit">标签名称</span>
+						<input type="text" name="name" id="name" class="am-input-edit" value="{$name}">
+					</div>
+
+				</div>
+				<input type="hidden" name="id" value="{$id}">
+				<input type="hidden" name="act" value="{$act}">
+				<input type="submit" class="am-btn am-btn-default am-btn-primary" value="保存">
+			</form>
+			
+			
+		</div>
+
+		<div class="content-detail">
+			
+		</div>
+	</div>
+
+<include file="Common:foot"/>

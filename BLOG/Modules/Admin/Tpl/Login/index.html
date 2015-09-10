@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wuliaonimei后台</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/font-awesome.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/resert.css">
+	<style type="text/css">
+	.wrap{font-size: 16px;}
+		.content{width:600px;margin:0 auto;}
+			.content-title{margin-top:20px;}
+				.content-title h3{border-bottom:1px solid #efefef; padding:20px 0;font-size:18px;}
+				.content-title a{background:#23abf0; margin:20px 0;display: inline-block;padding:10px 13px;color:white;
+				-webkit-transition:background .5s ease-in-out;
+			    -moz-transition:background .5s ease-in-out;
+			    -o-transition:background .5s ease-in-out;
+			    -ms-transition:background .5s ease-in-out;
+				transition:background .5s all ease-in-out;
+				}
+				.content-title i{margin-right: 5px}
+				.content-title a:hover{background:#0F9AE0;}
+
+			.content-center{font-weight:bold;}
+				.common-input{margin-bottom:20px;}
+				.common-input span{display:block;}
+				.common-input input{
+					display:block;
+					height:40px; 
+					width:100%;
+					border:1px solid #dbdbdb;
+					color:#666666;
+					margin-top: 5px;
+					font-size: 18px;
+					padding-left:10px;
+				}
+			
+			.foot{padding: 15px 0;border-bottom:1px solid #efefef;font-size: 14px;}
+				.foot input{
+					background:#23abf0;
+					padding:8px 13px;
+					color:white;
+					outline: none;
+					border:1px solid transparent;
+					cursor:pointer;
+				-webkit-transition:background .5s ease-in-out;
+			    -moz-transition:background .5s ease-in-out;
+			    -o-transition:background .5s ease-in-out;
+			    -ms-transition:background .5s ease-in-out;
+				transition:background .5s all ease-in-out;}
+				.foot .btn-right{float:right;background:#e6e6e6;color:#444444;}
+				.content label{font-weight: bold;display:inline-block;}
+				
+				.foot .btn-left:hover{background:#0F9AE0;}
+				.foot .btn-right:hover{background:#C7C7C7;}
+				
+	</style>
+</head>
+<body>
+
+<!-- <span><i class="fa fa-link"></i> 链接</span> -->
+
+	<div class="wrap">
+		<div class="content">
+			<div class="content-title">
+				<h3>登录</h3>
+				<a href="#"><i class="fa fa-link fa-1g"></i>主站</a>
+			</div>
+
+			<form action="__URL__/login" method="POST">
+				<div class="content-center">
+					<div class="content-username common-input">
+						<span>用户名:</span>
+						<input type="text" name="username" placeholder="">
+					</div>
+					<div class="content-password common-input">
+						<span>密码:</span>
+						<input type="password" name="password" placeholder="">
+					</div>
+				</div>
+				<label for="remember-me">
+					<input id="remember-me" type="checkbox">
+					记住密码
+				</label>
+				<div class="foot">
+					<input class="btn btn-left" type="submit" value="登 录">
+					<input class="btn btn-right" type="submit" value="忘记密码 ^_^? ">
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

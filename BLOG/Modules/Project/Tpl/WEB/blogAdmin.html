@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="__PUBLICCC__/css/resert.css"/>
+	<link rel="stylesheet" href="__PUBLICCC__/css/main.css">
+	<link rel="stylesheet" href="__PUBLICCC__/css/font-awesome.css">
+	<script src="__PUBLICC__/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="__PUBLICCC__/js/bar.js" type="text/javascript" ></script>
+	<title>wuliaonimei博客后台</title>
+	<style type="text/css">
+	.table-id{
+		width:80px;
+	}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<div class="wrap">
+
+		<!--heider-->
+		<header class="topbar">
+			<div class="topbar-left">
+				<h3>Wuliaonimei</h3>
+				<span>后台管理</span>
+			</div>
+			<div class="topbar-right">
+				<ul>
+					<li class="topbar-right-emali">
+						<a>
+							<i class="fa fa-envelope-o fa-1g"></i>
+							收件箱
+						</a>
+					</li>
+					<li  class="topbar-right-user">
+						<a>
+							<i class="fa fa-users fa-1g"></i>
+							管理员
+							<i class="fa fa-caret-down" ></i>
+						</a>
+						<ul class="dropdown-content">
+							<li>
+								<a href="#"><i class="fa fa-user "></i>资料</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog "></i>设置</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-power-off "></i>退出</a>
+								
+							</li>
+						</ul>
+					</li>
+					<li class="topbar-right-screen">
+						<a>
+							<i class="fa fa-arrows-alt fa-1g"></i>
+							开启全屏
+						</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+
+<div class="content">
+			<div class="content-left">
+				<ul>
+					<li><a href="#"><i class="fa fa-home fa-1g"></i>首页</a></li>
+					<li><a href="#"><i class="fa fa-file fa-1g"></i>标签管理</a></li>
+					<li><a href="#"><i class="fa fa-file fa-1g"></i>类别管理</a></li>
+					<li><a href="#"><i class="fa fa-table fa-1g"></i>文章管理</a></li>
+					<li><a href="#"><i class="fa fa-pencil-square-o fa-1g"></i>用户管理</a></li>
+					<li><a href="#"><i class="fa fa-sign-out fa-1g"></i>注销</a></li>
+					<li class="admin-parent">
+						<a href="#"><i class="fa fa-cog fa-1g"></i>系统管理<i class="fa fa-angle-right fa-1g am-fr"></i></a>
+						<ul class="am-list admin-sidebar-sub">
+							<li><a href="#"><i class="fa fa-calendar fa-1g"></i>管理员管理</a></li>
+							<li><a href="#"><i class="fa fa-calendar fa-1g"></i>权限管理</a></li>
+							<li><a href="#"><i class="fa fa-calendar fa-1g"></i>系统通知</a></li>
+							<li><a href="#"><i class="fa fa-calendar fa-1g"></i>系统日志</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<div class="speak-common content-showroom">
+					<p><i class="fa fa-bookmark fa-1g"></i>公告</p>
+					<p>时光静好，与君语；细水流年，与君同。—— 天上蹲</p>
+				</div>
+				<div class="speak-common content-proverb">
+					<p><i class="fa fa-tag fa-1g"></i>wiki</p>
+					<p>Welcome to the wuliaonimei!</p>
+				</div>
+			</div>
+
+
+		<!--content-->
+	<div class="content-right ">
+		<div class="content-nav">
+			<div class="nav-word">
+				<strong>首页</strong>
+				/
+				<small>一些常用模块</small>
+			</div>
+			
+			<ul class="nav-button">
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>操作系统<br/>{$info.操作系统}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a am-text-success" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>运行环境<br/>{$info.运行环境}</a></div>
+				</li>
+
+
+				<li>
+					<div class="am-text-secondary">
+						<a class="am-text-secondary-a am-text-warning" href="">
+							<span class="a1" href="">
+							<i class="fa fa-file-text fa-2x"></i>
+							</span>
+							<br/>ThinkPHP版本<br/>{$info.ThinkPHP版本}
+						</a>
+					</div>
+				</li>
+
+				<li>
+					<div class="am-text-secondary">
+						
+						<a class="am-text-secondary-a" href="">
+							<span class="a1" href="">
+							<i class="fa fa-file-text fa-2x"></i>
+							
+							</span>
+							<br/>上传附件限制<br/>{$info.上传附件限制}
+						</a>
+					</div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>执行时间限制<br/>{$info.执行时间限制}</a></div>
+				</li>
+
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>服务器时间<br/>{$info.服务器时间}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>北京时间<br/>{$info.北京时间}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>服务器域名/IP<br/>{$info.服务器域名/IP}</a></div>
+				</li>
+
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>剩余空间<br/>{$info.剩余空间}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>register_globals<br/>{$info.register_globals}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>magic_quotes_gpc<br/>{$info.magic_quotes_gpc}</a></div>
+				</li>
+				
+				<li>
+					<div class="am-text-secondary"><a class="am-text-secondary-a" href=""><span class="a1" href=""><i class="fa fa-file-text fa-2x"></i></span><br/>magic_quotes_runtime<br/>{$info.magic_quotes_runtime}</a></div>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="content-detail">
+			<table class="table am-table am-table-striped">
+				<thead>
+					<tr>
+						<th class="table-id">ID</th>
+						<th>标题</th>
+						<th>作者</th>
+						<th>上传日期</th>
+						<th>日期</th>
+						<th class="table-set">操作</th>
+					</tr>
+				</thead>
+		
+				<tbody>
+					<tr>
+		              <td>MAD10109</td>
+		              <td><a href="">标题</a></td>
+		              <td>无聊你妹</td>
+		              <td>2015-07-09 13:27:03</td>
+		              <td>未审核</td>
+		              <td>
+		                <div class="am-btn-toolbar">
+		                    <a href="" class="am-btn  am-btn-xs am-btn-default am-text-secondary"><span class="fa fa-pencil-square-o fa-1x"></span>审核</a>
+		                    
+		                </div>
+		              </td>
+		            </tr>
+		
+		            <tr>
+		              <td>MAD10109</td>
+		              <td><a href="">标题</a></td>
+		              <td>无聊你妹</td>
+		              <td>2015-07-09 13:27:03</td>
+		              <td>未审核</td>
+		              <td>
+		                <div class="am-btn-toolbar">
+		                    <a href="" class="am-btn am-btn-default am-btn-xs am-text-success"><span class="fa fa-trash-o fa-1x"></span>删除</a>
+		                    
+		                </div>
+		              </td>
+		            </tr>
+		
+		            <tr>
+		              <td>MAD10109</td>
+		              <td><a href="">标题</a></td>
+		              <td>无聊你妹</td>
+		              <td>2015-07-09 13:27:03</td>
+		              <td>未审核</td>
+		              <td>
+		                <div class="am-btn-toolbar">
+		                    <a href="" class="am-btn am-btn-default am-btn-xs "><span class="fa fa-plus fa-1x"></span>增加</a>
+		                    
+		                </div>
+		              </td>
+		            </tr>
+		
+		            <tr>
+		              <td>MAD10109</td>
+		              <td><a href="">标题</a></td>
+		              <td>无聊你妹</td>
+		              <td>2015-07-09 13:27:03</td>
+		              <td>未审核</td>
+		              <td>
+		                <div class="am-btn-toolbar">
+
+		                   <a href="#" class="am-btn am-btn-default am-btn-xs am-text-warning"><span class="fa fa-trash-o fa-1x"></span>审核</a>
+		                </div>
+		              </td>
+		            </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+		</div>
+	</div>
+</body>
+</html>

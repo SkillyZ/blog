@@ -1,0 +1,336 @@
+	.wrap{color:#666;}
+		.topbar{
+			background:#F8F8F8;
+			height:50px;
+			box-shadow: 0 0 1px;
+			vertical-align:middle;
+			line-height:50px;
+			position:relative;
+			z-index: 1;
+		}
+			.topbar-left{float:left;margin-left:10px;}
+				.topbar-left h3{float:left;font-weight:bold;}
+				.topbar-left span{float:left;margin-left:5px;}
+
+			.topbar-right{float:right;height:50px;position: relative;z-index: 0}
+				.topbar-right li{float:left;margin-right: 10px;position: relative;}
+				.topbar-right a{height:50px;display:block;padding: 0 10px;cursor:pointer;}
+				.topbar-right a:hover{background:#EEEEEE;}
+
+				.topbar-right a:after{position:absolute;left: 50%;margin-left: -7px;bottom:-1px;content:"";display: inline-block;width:0;height:0;vertical-align: middle;border-bottom: 7px solid #f8f8f8;border-right:7px solid transparent;border-left:7px solid transparent;border-top:0;transform:rotate(360deg);-webkit-transform:rotate(360deg);-webkit-transition:opacity .1s;transition:opacity .1s;opacity:0;}
+				.topbar-right a:hover:after{border-bottom: 7px solid black;opacity:1;}
+				.topbar-right-user .dropdown-content a{
+					color:#666;
+					padding-left: 20px;
+					line-height: 35px;
+					height: 35px;
+				}
+				.topbar-right-user .dropdown-content .fa{
+					padding-right: 5px;
+				}
+				.topbar-right-user .dropdown-content{
+					position:absolute;
+					min-width: 158px;
+					top:51px;
+					display: block;
+					opacity: 1;
+					z-index: -1;
+					overflow: hidden;
+					height: 0;
+					background: #fff;
+					border:1px solid #efefef;
+				}
+				.topbar-right-user .dropdown-content li{
+					float:none;
+					margin:0;
+				}
+		.content{
+			background: #f3f3f3;
+			overflow: hidden;
+			width: 100%;
+		}
+			.content-left{
+				font-size: 16px;
+				width:259px;
+				border:1px solid #cecece;
+				border-top: 0;
+				float:left;
+			}
+				.content-left>ul{
+					width:259px;
+					background: #fff;
+					overflow: hidden;
+				}
+				.content-left li{
+					height:auto;
+					line-height:49px;
+					border-bottom:1px solid #dedede;
+					cursor:pointer;
+					position:relative;
+				}
+				.content-left li a{
+					color:#5c5c5c;
+					padding-left: 24px;
+					display: inline-block;
+					width:235px;
+
+				}
+				.content-left li a .fa{
+					padding-right: 5px;
+				}
+				.content-left .speak-common {
+					background: #fff;
+					margin: 10px;
+					padding:13px;
+					line-height: 25px;
+					border:1px solid #ddd;
+					box-shadow:0 1px 1px rgba(0,0,0,.05)
+				}
+				.content-left .speak-common>p{
+					margin-bottom:15px;
+					font-size: 14px;
+				}
+				.content-left .speak-common i{
+					padding-right: 5px;
+				}
+				.admin-sidebar-sub{
+					border-top:1px solid #dedede;
+					padding-left: 20px;
+					background: #ececec;
+					height: 0px;
+				}
+				.admin-sidebar-sub li{
+					background: #fff;
+					border-left:1px solid #dedede;
+					
+				}
+				.am-fr{
+					position:absolute;
+					right: 20px;
+					top:15px;
+				}
+			.content-right{
+				width: auto;
+				background: #fff;
+				overflow: hidden;
+				height: 100%;
+				
+			}
+				.content-right .content-nav{
+					padding:16px;
+				}
+				.content-right .content-nav strong{
+					font-size: 18px;
+					font-weight: bold;
+					color:#0e90d2;
+				}
+				.content-right .content-nav small{
+					
+				}
+				.content-nav .nav-button{
+					vertical-align: middle;
+					width: 100%;
+					overflow: hidden;
+					border: 1px solid #e9ecf1;
+					margin-top: 20px;
+				}
+				.content-nav .nav-button li:last-child div{
+					border-right: 0;
+				}
+				.content-nav .nav-button li{
+					float: left;
+					text-align: center;
+					overflow: hidden;
+					width: 25%;
+					height: 150px;
+				}
+				.content-nav .nav-button li>div{
+					margin: 20px 0;
+					border-right: 1px solid #e9ecf1;
+				}
+				.content-nav .nav-button li .a1{
+					height: 48px;
+					width:48px;
+					display: inline-block;
+					text-align: center;
+					background: #eee;
+					border-radius: 24px;
+				}
+				.content-nav .nav-button li .a1 i{
+					height: 38px;
+					width: 48px;
+					padding-top: 10px;
+					color:#333;
+				}
+				.am-text-secondary-a:hover{
+					color:#095f8a;
+				}
+				/*.content-nav .nav-button li .a1:before{
+					  content: "\f15c";
+
+					  display: inline-block;
+					  font-family: FontAwesome,sans-serif;
+					  font-weight: 400;
+					  font-style: normal;
+					  vertical-align: baseline;
+					  -webkit-font-smoothing: antialiased;
+					  box-sizing: border-box;
+				}*/
+
+			.content-detail{
+				width: 100%;
+				padding: 16px;
+			}
+			.am-table{
+				width:100%;
+				text-align: left;
+				height: auto;
+				box-sizing: border-box;/* 	
+为元素设定的宽度和高度决定了元素的边框盒。
+就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。*/
+				border-collapse: collapse;/*如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性。*/
+			}
+			.table-id{
+				width: 50px;
+			}
+			.table-set{
+				width: 150px;
+			}
+			.table-content{
+				width:200px;
+				/* word-break:keep-all; */
+				text-overflow:ellipsis;
+				white-space:nowrap;
+				overflow:hidden;
+			}
+			
+
+.am-cf{
+	float:right;
+	padding:20px 40px 20px 20px;
+}
+.am-btn-xs{
+	display:table-cell;
+	border:1px solid #ccc;
+}
+.am-btn-group{
+	color:#3bb4f2;
+	border:1px solid #ccc;
+	width:60px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	background-color:#e6e6e6;
+	/* background-color:#d9d9d9; */
+	display: inline-block;
+	overflow: hidden;
+	float: left;
+}
+.am-btn:hover{
+	background-color:#c7c7c7;
+	color:black;
+}
+
+.am-btn-default{
+	cursor: pointer;
+	display: inline-block;
+	width:60px;
+	height: 30px;
+	color: #444;
+	background-color: #e6e6e6;
+	/* border-color: #e6e6e6; */
+	/*color:#3bb4f2;*/
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	webkit-transition: background-color 300ms ease-out,border-color 300ms ease-out;
+	transition:background-color 300ms ease-out,border-color 300ms ease-out;
+}
+
+.am-btn-primary {
+  color: #fff;
+  background-color: #0e90d2;
+  border-color: #0e90d2;
+}
+.am-text-danger {
+	color: #dd514c;
+}
+.am-text-success {
+	color: #5eb95e;
+}
+.am-text-warning {
+	color: #f37b1d;
+}
+.am-text-secondary {
+	color: #3bb4f2;
+}
+a{
+	color:#0e90d2;
+}
+.topbar-right a {
+	color: #666;
+}
+
+thead {
+	display: table-header-group;/*此元素会作为一个或多个行的分组来显示（类似 <thead>）。*/
+	vertical-align: middle;
+	border-color: inherit;
+	border-bottom: 2px solid #ccc;
+}
+.am-table{
+	table-layout:fixed;
+}
+.am-table>thead>tr>th, 
+.am-table>tbody>tr>th, 
+.am-table>tfoot>tr>th{
+	font-weight: bold;
+}
+
+.am-table>thead>tr>th, 
+.am-table>tbody>tr>th, 
+.am-table>tfoot>tr>th, 
+.am-table>thead>tr>td, 
+.am-table>tbody>tr>td, 
+.am-table>tfoot>tr>td{
+  padding: .7rem;
+  line-height: 1.6;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+.am-table>thead>tr>th{
+  border-top:0;
+}
+
+/*Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）。*/
+.am-table-striped>tbody>tr:nth-child(odd)>td, 
+.am-table-striped>tbody>tr:nth-child(odd)>th{
+	background-color: #f9f9f9;
+}
+
+.am-table-striped>tbody>tr:hover>td{
+	background-color: #e9e9e9;
+}
+
+.am-text-secondary:hover{
+	color:#095f8a;
+}
+
+textarea{
+	width: 60%;
+	padding: 6px;
+	font-size: 16px;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* .topbar-right-user:before{content:"\f0d7";}  */

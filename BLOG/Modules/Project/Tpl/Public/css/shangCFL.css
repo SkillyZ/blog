@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;padding:0;}
+
+.top
+{
+	font-size:14px;
+	font-family:"微软雅黑";
+	width:220px;
+	margin:30px;
+	border:2px solid #E4393C;}
+
+.top_title
+{
+	height:40px;
+	line-height:40px;
+	background:#F34A39;
+	color:#FFF;
+	font-weight:bold;
+	padding-left:20px;}
+
+.top li
+{
+	
+	line-height:25px;
+	list-style-type:none;
+	background:url(../images/web/shangCFL/1.jpg) no-repeat right;}
+
+.top li a
+{
+	text-decoration:none;
+	color:#333;}
+
+.top li a:hover, .top li a:active
+{
+	text-decoration:underline;
+	color:#E4393C;
+	font-weight:bold;
+	font-size:15px;}
+	
+.top li:hover
+{
+	border:1px solid #DDD;
+	background-image:none;
+	box-shadow:0 0 8px #DDD;
+	-moz-box-shadow:0 0 8px #DDD;
+	-webkit-box-shadow:0 0 8px #DDD;}
+
+.submenu
+{
+	display:none;
+	width:715px;
+	left:250px;
+	position:absolute;
+	top:40px;
+	border:1px solid #DDDDDD;
+	z-index:4;
+	background:white;
+	box-shadow:0 0 8px #DDD;
+	-moz-box-shadow:0 0 8px #DDD;
+	-webkit-box-shadow:0 0 8px #DDD;}
+
+
+.left_div
+{
+	float:left;
+	width:490px;
+	background:gray;
+	z-index:20;}
+
+.right_div
+{
+	float:left;
+	width:200px;
+	background:#A42123;}
+
+.top li:hover .submenu
+{
+	display:block;}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

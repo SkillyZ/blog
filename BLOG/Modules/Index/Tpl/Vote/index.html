@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Drawmad用户体验调查</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑";
+}
+h1{
+	font-size:18px;
+	color:#218d3b;
+}
+h2{
+	font-size:32px;
+	color:#218d3b;
+	margin-bottom:10px;
+}
+.Title{
+	margin:50px auto;
+	width:330px;
+}
+.QuestionBox{
+	width:900px;
+	margin:40px auto;
+}
+.Question{
+	font-size:18px;
+	color:#333;
+}
+.AswerBox{
+	overflow:hidden;
+}
+label{
+	display:block;
+	float:left;
+	width:900px;
+	margin-top:5px;
+}
+button,input[type=submit]{
+	width:300px;
+	height:40px;
+	border:none;
+	background-color:#218d3b;
+	color:white;
+	text-align:center;
+	font-size:18px;
+	display:block;
+	margin:0 auto;
+	margin-bottom:100px;
+	cursor:pointer;
+}
+textarea{
+	width:580px;
+	height:80px;
+	padding:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="Title">
+	<h1>感谢您配合&nbsp;<img src="__PUBLIC__/images/drawmad.png">&nbsp;用户体验调查</h1>
+</div>
+<form action="__URL__/addVote" method="POST">
+<div class="QuestionBox">
+    <h2>1&nbsp;<span class="Question">你的浏览器是</span></h2> 
+    <div class="AswerBox">
+        <label style="width:300px"><input name="Question1" type="radio" value="IE 9或更低版本" />&nbsp;IE 9或更低版本 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="IE 10或更高版本" />&nbsp;IE 10或更高版本 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="Chrome" />&nbsp;Chrome </label> 
+        <label style="width:300px"><input name="Question1" type="radio" value="百度" />&nbsp;百度 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="傲游" />&nbsp;傲游 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="360" />&nbsp;360 </label> 
+        <label style="width:300px"><input name="Question1" type="radio" value="腾讯" />&nbsp;腾讯 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="Opera" />&nbsp;Opera </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="UC电脑版" />&nbsp;UC电脑版 </label> 
+        <label style="width:300px"><input name="Question1" type="radio" value="搜狗" />&nbsp;搜狗 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="猎豹" />&nbsp;猎豹 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="火狐" />&nbsp;火狐 </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="Safari" />&nbsp;Safari </label> 
+		<label style="width:300px"><input name="Question1" type="radio" value="某狂拽酷霸的冷门浏览器" />&nbsp;某狂拽酷霸的冷门浏览器 </label> 
+    </div>
+</div>
+<div class="QuestionBox">
+    <h2>2&nbsp;<span class="Question">在使用drawmad时是否有遇到以下情况</span></h2> 
+    <div class="AswerBox">
+        <label><input name="Question2[]" type="checkbox" value="网页完全打不开" />&nbsp;网页完全打不开 </label> 
+        <label><input name="Question2[]" type="checkbox" value="打开网页时很慢很卡" />&nbsp;打开网页时很慢很卡 </label> 
+        <label><input name="Question2[]" type="checkbox" value="不能投稿，显示“文件上传错误”之类的报错" />&nbsp;不能投稿，显示“文件上传错误”之类的报错 </label> 
+        <label><input name="Question2[]" type="checkbox" value="播放器出错" />&nbsp;播放器出错 </label> 
+    </div>
+</div>
+<div class="QuestionBox">
+    <h2>3&nbsp;<span class="Question">在看视频时是否遇到以下情况</span></h2> 
+    <div class="AswerBox">
+        <label><input name="Question3" type="radio" value="播放器出错" />&nbsp;播放器出错 </label> 
+        <label><input name="Question3" type="radio" value="无限转菊花" />&nbsp;无限转菊花 </label> 
+        <label><input name="Question3" type="radio" value="龟速加载，根本没的看" />&nbsp;龟速加载，根本没的看 </label> 
+        <label><input name="Question3" type="radio" value="速度勉强跟的上播放，或者需要暂停加载但还可以忍受" />&nbsp;速度勉强跟的上播放，或者需要暂停加载但还可以忍受 </label> 
+        <label><input name="Question3" type="radio" value="很流畅" />&nbsp;很流畅 </label> 
+    </div>
+</div>
+<div class="QuestionBox">
+	<h2 class="Question">请把你的建议告诉我们吧</h2>
+    <textarea name="advise"></textarea>
+</div>
+<input type="submit" value="提交（感谢配合~）">
+</form>
+
+</body>
+</html>

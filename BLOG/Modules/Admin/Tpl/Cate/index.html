@@ -1,0 +1,109 @@
+
+<include file="Common:head"/>
+<style type="text/css">
+	.am-form-field {
+		display: table-cell;
+		width: 160px;
+		height: 35px;
+		position: absolute;
+		right: 60px;
+		padding-left: 10px;
+		font-size: 14px;
+		border:1px solid #ccc;
+	}
+	.am-btn-group-search{
+		float: right;
+		height: 35px;
+		width: 60px;
+	}
+	.am-btn-search{
+		height: 35px;
+		line-height: 35px;
+	}
+	.am-btn-group-wrap{
+		vertical-align: middle;
+		line-height: 35px;
+		margin-top: 40px;
+		overflow: hidden;
+	}
+	.am-input-group{
+		position: relative;
+		height: 40px;
+		float: right;
+	}
+	.am-btn-group:first-child {
+	  margin-left: 0;
+	}
+	.am-btn-group{
+		margin-left: -1px;
+	}
+</style>
+
+	<!--content-->
+	<div class="content-right ">
+		<div class="content-nav">
+			<div class="nav-word">
+				<strong>类别管理</strong>
+				/
+				<small>列表</small>
+			</div>
+			
+			<div class="am-btn-group-wrap">
+				<div class="am-btn-group">
+					<a href="__URL__/addCate" class="am-btn am-btn-default "><span class="fa fa-plus fa-1x"></span>增加</a>
+				</div>
+				<div class="am-btn-group">
+					<a href="" class="am-btn am-btn-default "><span class="fa fa-plus fa-1x"></span>删除</a>
+				</div>
+
+				<div class="am-input-group">
+					<input type="text" name="" class="am-form-field">
+				    <div class="am-btn-group am-btn-group-search">
+						<a href="" class="am-btn am-btn-default am-btn-search">搜索</a>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+		<div class="content-detail">
+			<table class="table am-table am-table-striped">
+				<thead>
+					<tr>
+						<th class="table-id">ID</th>
+						<th>类别名称</th>
+						<th>增加日期</th>
+						<th class="table-set">操作</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					
+					<foreach name="cateList" item="cate">
+						 <tr>
+			              <td>C{$cate.id}</td>
+			              <td><a href="">{$cate.name}</a></td>
+			              <td>{$cate.date}</td>
+			              <td>
+			                <div class="am-btn-toolbar">
+			                 
+		                    <a href="__URL__/addCate?id={$cate.id}" class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="fa fa-trash-o fa-1x"></span>修改</a>
+		                    
+		                    <a href="__URL__/delCate?id={$cate.id}" class="am-btn am-btn-default am-btn-xs "><span class="fa fa-trash-o fa-1x"></span>删除</a>
+			                </div>
+			              </td>
+			            </tr>
+					</foreach>
+
+				</tbody>
+
+			</table>
+
+			<div class="am-cf" >
+				{$page}
+			</div>
+		</div>
+	</div>
+
+<include file="Common:foot"/>

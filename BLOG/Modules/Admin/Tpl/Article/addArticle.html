@@ -1,0 +1,158 @@
+
+<include file="Common:head"/>
+<style type="text/css">
+.am-btn{
+	outline: 0;
+	border: 0;
+	border-radius: 2px;
+}
+.am-btn-primary:hover{
+	color: #fff;
+	background-color: #0a6999;
+	border-color: #0a6999;
+}
+.am-input-edit{
+	height: 35px;
+	font-size: 16px;
+	padding-left: 10px;
+	width: 33%;
+	border: 1px solid #ccc;
+	-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.am-div-edit:first-child{
+	margin-top: 0;
+}
+.am-div-edit{
+	margin-top: 10px;
+}
+.am-div-edit-wrap{
+	width: 100%;
+	padding: 50px 0;
+	text-align: left;
+}
+.am-text-edit{
+	width: 13%;
+	margin-right: 20px;
+	display: inline-block;
+	text-align: right;
+}
+.am-select{
+	width:34%;
+	height: 35px;
+	border:1px solid #ccc;
+}
+#containerWrap{
+	width:80%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.am-input-title{
+	width:50%;
+}
+</style>
+
+	<!--content-->
+	<div class="content-right ">
+		<div class="content-nav">
+			<div class="nav-word">
+				<strong>文章管理</strong>
+				/
+				<small>新增文章</small>
+			</div>
+			
+			<form action="__URL__/saveArticle" method="POST">
+				<div class="am-div-edit-wrap am-form">
+					<div class="am-div-edit">
+						<span class="am-text-edit">文章ID</span>
+						<input type="text" name="id" id="id" class="am-input-edit" disabled="disabled" value="A{$id}">
+					</div>
+					
+					<div class="am-div-edit">
+						<span class="am-text-edit">标题</span>
+						<input type="text" name="title" id="title" class="am-input-edit am-input-title" placeholder="请输入标题" value="{$articeNow.title}">
+					</div>
+					
+					<div class="am-div-edit">
+						<span class="am-text-edit">内容</span>
+						<!-- <textarea class="" rows="5" id="user-intro" name="message" placeholder="输入文章内容"></textarea> -->
+						<!-- 加载编辑器的容器 -->
+						<div id="containerWrap" >
+							<script id="container" name="content" type="text/plain">
+							{$articeNow.content}
+							</script>
+
+						</div>
+					</div>
+
+					<div class="am-div-edit">
+						<span class="am-text-edit">标签</span>
+						<input type="text" name="tag" id="tag" class="am-input-edit" placeholder="请输入标签以英文逗号分割" value="{$tagNow.tag_name}">
+					</div>
+
+					<div class="am-div-edit">
+						<span class="am-text-edit">类别</span>
+						<!-- <input type="text" name="Id" id="Id" class="am-input-edit" placeholder="请选择类别"> -->
+						<select class="am-select" name="cid" id="">
+							<foreach name="cateList" item="cate">
+								<if condition="$cate.cid eq 1">
+									<option value="{$cate.id}" selected="selected">{$cate.name}</option>
+								<else/>
+									<option value="{$cate.id}">{$cate.name}</option>
+								</if>
+								
+							</foreach>
+						</select>
+					</div>
+
+				</div>
+			
+			<input type="hidden" name="short_content" value="">
+			<input type="hidden" name="tid" value="{$tagNow.id}">
+			<input type="hidden" name="id" value="{$id}">
+			<input type="hidden" name="act" value="{$act}">
+			<input type="submit" onclick="formSubmit()" class="am-btn am-btn-default am-btn-primary" value="发表文章">
+
+			</form>
+		</div>
+
+		<div class="content-detail">
+			
+		</div>
+	</div>
+
+<include file="Common:foot"/>
+
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="__PUBLICC__/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="__PUBLICC__/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        //var ueInit = UE.getEditor('container');
+	    var ueInit = UE.getEditor('container',{
+	        initialFrameWidth : "100%",
+	        initialFrameHeight: 400,
+	        scaleEnabled:true
+	    });
+
+	    //var editor = UE.GetEditor();
+		/*setTimeout(function () {
+			ueInit.execCommand('drafts');//自动保存
+		}, 500);*/
+
+		function formSubmit(){
+			$('input[name=short_content]').val(ueInit.getContentTxt());
+
+		}
+       /* var ue = UE.getContent();
+		//对编辑器的操作最好在编辑器ready之后再做
+		ue.ready(function() {
+		    //设置编辑器的内容
+		    ue.setContent('hello');
+		    //获取html内容，返回: <p>hello</p>
+		    var html = ue.getContent();
+		    //获取纯文本内容，返回: hello
+		    var txt = ue.getContentTxt();
+		});*/
+    </script>
